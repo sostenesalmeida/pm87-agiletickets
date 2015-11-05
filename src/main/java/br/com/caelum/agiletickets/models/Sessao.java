@@ -111,4 +111,10 @@ public class Sessao {
 		return preco;
 	}
 	
+	public TipoDeEspetaculo getTipoEspetaculo(){
+		
+		return this.getEspetaculo().getTipo();
+	}
+	
+	
 }
