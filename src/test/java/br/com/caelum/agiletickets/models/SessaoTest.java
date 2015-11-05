@@ -12,14 +12,6 @@ public class SessaoTest {
 
         Assert.assertTrue(sessao.podeReservar(1));
 	}
-	
-	@Test
-	public void deveVender5ingressosSeHa10vagas() throws Exception {
-		Sessao sessao = new Sessao();
-		sessao.setTotalIngressos(10);
-		
-		Assert.assertTrue(sessao.podeReservar(5));
-	}
 
 	@Test
 	public void naoDeveVender3ingressoSeHa2vagas() throws Exception {
@@ -36,6 +28,15 @@ public class SessaoTest {
 
 		sessao.reserva(3);
 		Assert.assertEquals(2, sessao.getIngressosDisponiveis().intValue());
+	}
+	
+	@Test
+	public void reservarIngressosDeveZerarONumeroDeIngressosDisponiveis() throws Exception {
+		Sessao sessao = new Sessao();
+		sessao.setTotalIngressos(5);
+
+		sessao.reserva(5);
+		Assert.assertEquals(0, sessao.getIngressosDisponiveis().intValue());
 	}
 	
 }
