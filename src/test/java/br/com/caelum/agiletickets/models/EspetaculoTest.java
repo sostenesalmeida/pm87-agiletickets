@@ -122,7 +122,7 @@ public class EspetaculoTest {
 	  	List<Sessao> sessoes = show.criaSessoes(hoje, daquiQuatroSemanas, agora, semanal);
 	  
 	  	//ESTAS SAO AS SAIDAS ESPERADAS:
-		Assert.assertEquals(5, sessoes.size());
+		Assert.assertEquals(6, sessoes.size());
 	  
 	  	//Nao basta apenas verificar o size da lista, precisa garantir que criou as sessoes corretamente:
 		for(int i = 0; i <= sessoes.size()-1; i++) {
